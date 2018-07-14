@@ -1,2 +1,2 @@
-# AtgorithmicSolutions
-LeetCode solutions
+# Atgorithm Solutions
+HakerRank & LeetCode solutions
