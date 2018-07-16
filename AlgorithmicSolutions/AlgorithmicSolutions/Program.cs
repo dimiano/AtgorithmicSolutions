@@ -12,8 +12,7 @@ namespace AlgorithmicSolutions
 			// 1. TwoSum.Test();
 			// 2. AddTwoNumbers.Test();
 			// 3. LongestSubstringWithoutRepeatingCharacters.Test();
-			////MedianOfTwoSortedArrays.Test();
-			ReorderedPowerOf2.Test();
+			MedianOfTwoSortedArrays.Test();
 			
 			Console.ReadLine();
 		}

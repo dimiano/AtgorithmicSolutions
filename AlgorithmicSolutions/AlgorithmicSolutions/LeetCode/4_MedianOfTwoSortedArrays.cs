@@ -30,31 +30,80 @@ namespace AlgorithmicSolutions.LeetCode
 		{
 			TestCase1();
 			TestCase2();
+			TestCase3();
+			TestCase4();
 		}
 
 		private static double GetResult(int[] nums1, int[] nums2)
 		{
-			var first = nums1;
-			var second = nums2;
+			double result = 0.0;
+			var merged = Merge(nums1, nums2);
 
-			if(nums1.Length < nums2.Length)
+			if (merged.Length % 2 == 0)
 			{
-				first = nums2;
-				second = nums1;
+				var middle2 = merged.Length / 2;
+				var middle1 = middle2 - 1;
+
+				result = (double)(merged[middle1] + merged[middle2]) / 2;
+			}
+			else
+			{
+				result = merged[merged.Length / 2];
 			}
 
-			for (int i = nums1.Length - 1; i >= 0; i--)
+			return result;
+		}
+
+		private static int[] Merge(int[] nums1, int[] nums2)
+		{
+			var high = nums1.Length + nums2.Length;
+			var result = new int[high];
+			var index = 0;
+			var i = 0;
+			var j = 0;
+
+
+			while ((i < nums1.Length || j < nums2.Length) && index < high)
 			{
-				for (int j = 0; j < nums2.Length; j++)
+				if (i >= nums1.Length && j < nums2.Length)
 				{
-					if (nums1[i] < nums2[j])
-					{
-						return (double)(nums1[i] + nums2[j]) / 2;
-					}
+					result[index] = nums2[j];
+					index++;
+					j++;
+					continue;
+				}
+				else if (j >= nums2.Length && i < nums1.Length)
+				{
+					result[index] = nums1[i];
+					index++;
+					i++;
+					continue;
+				}
+
+				if (nums1[i] < nums2[j])
+				{
+					result[index] = nums1[i];
+					index++;
+					i++;
+				}
+				else if (nums1[i] == nums2[j])
+				{
+					result[index] = nums1[i];
+					index++;
+					i++;
+					result[index] = nums2[j];
+					index++;
+					j++;
+				}
+				else
+				{
+					result[index] = nums2[j];
+					index++;
+					j++;
 				}
 			}
 
-			return 0;
+			return result;
 		}
 
 		private static void TestCase1()
@@ -85,5 +134,32 @@ namespace AlgorithmicSolutions.LeetCode
 			Console.WriteLine();
 		}
 
+		private static void TestCase3()
+		{
+			var nums1 = new int[] { 3, 4 };
+			var nums2 = new int[] { };
+			var expect = 3.5;
+
+			var result = GetResult(nums1, nums2);
+
+			Console.WriteLine(" EXPECTED: " + string.Join(", ", expect));
+			Console.WriteLine(" RESULT:   " + string.Join(", ", result));
+			Console.WriteLine("_".PadLeft(20, '_'));
+			Console.WriteLine();
+		}
+
+		private static void TestCase4()
+		{
+			var nums1 = new int[] { 3 };
+			var nums2 = new int[] { 1, 2 };
+			var expect = 2.0;
+
+			var result = GetResult(nums1, nums2);
+
+			Console.WriteLine(" EXPECTED: " + string.Join(", ", expect));
+			Console.WriteLine(" RESULT:   " + string.Join(", ", result));
+			Console.WriteLine("_".PadLeft(20, '_'));
+			Console.WriteLine();
+		}
 	}
 }
