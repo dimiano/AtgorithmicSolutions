@@ -13,7 +13,9 @@ namespace AlgorithmicSolutions
 			// 2. AddTwoNumbers.Test();
 			// 3. LongestSubstringWithoutRepeatingCharacters.Test();
 			// 4. MedianOfTwoSortedArrays.Test();
-			LongestPalindromicSubstring.Test();
+			// 5. LongestPalindromicSubstring.Test();
+			// 6. 
+			ZigZagConversion.Test();
 			
 			Console.ReadLine();
 		}
