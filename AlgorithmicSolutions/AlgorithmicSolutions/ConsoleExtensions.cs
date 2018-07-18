@@ -33,7 +33,13 @@ namespace AlgorithmicSolutions
 		{
 			WriteResult(input, expect.ToString(), result.ToString());
 		}
+
 		public static void WriteResult(int input, int expect, int result)
+		{
+			WriteResult(input.ToString(), expect.ToString(), result.ToString());
+		}
+
+		public static void WriteResult(object input, object expect, object result)
 		{
 			WriteResult(input.ToString(), expect.ToString(), result.ToString());
 		}
