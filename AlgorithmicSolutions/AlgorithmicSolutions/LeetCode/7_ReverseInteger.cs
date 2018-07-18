@@ -25,6 +25,7 @@ For the purpose of this problem, assume that your function returns 0 when the re
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static AlgorithmicSolutions.ConsoleExtensions;
 
 namespace AlgorithmicSolutions.LeetCode
 {
@@ -73,11 +74,7 @@ namespace AlgorithmicSolutions.LeetCode
 
 			var result = GetResult(input);
 
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.WriteLine(" RESULT:   " + result);
-			Console.WriteLine("_".PadLeft(20, '_'));
-			Console.WriteLine();
+			WriteResult(input, expect, result);
 		}
 
 		private static void TestCase2()
@@ -87,11 +84,7 @@ namespace AlgorithmicSolutions.LeetCode
 
 			var result = GetResult(input);
 
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.WriteLine(" RESULT:   " + result);
-			Console.WriteLine("_".PadLeft(20, '_'));
-			Console.WriteLine();
+			WriteResult(input, expect, result);
 		}
 
 		private static void TestCase3()
@@ -101,11 +94,7 @@ namespace AlgorithmicSolutions.LeetCode
 
 			var result = GetResult(input);
 
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.WriteLine(" RESULT:   " + result);
-			Console.WriteLine("_".PadLeft(20, '_'));
-			Console.WriteLine();
+			WriteResult(input, expect, result);
 		}
 
 		private static void TestCase4()
@@ -115,11 +104,7 @@ namespace AlgorithmicSolutions.LeetCode
 
 			var result = GetResult(input);
 
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.WriteLine(" RESULT:   " + result);
-			Console.WriteLine("_".PadLeft(20, '_'));
-			Console.WriteLine();
+			WriteResult(input, expect, result);
 		}
 
 	}

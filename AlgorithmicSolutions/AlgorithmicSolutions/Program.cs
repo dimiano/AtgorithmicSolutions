@@ -15,8 +15,9 @@ namespace AlgorithmicSolutions
 			// 4. MedianOfTwoSortedArrays.Test();
 			// 5. LongestPalindromicSubstring.Test();
 			// 6. ZigZagConversion.Test();
-			// 7. 
-			ReverseInteger.Test();
+			// 7. ReverseInteger.Test();
+			// 8. 
+			StringToIntegerAtoi.Test();
 			
 			Console.ReadLine();
 		}
