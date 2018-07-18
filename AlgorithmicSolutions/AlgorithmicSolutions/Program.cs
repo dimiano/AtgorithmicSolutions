@@ -17,8 +17,11 @@ namespace AlgorithmicSolutions
 			// 6. ZigZagConversion.Test();
 			// 7. ReverseInteger.Test();
 			// 8. StringToIntegerAtoi.Test();
-			// 9. 
-			PalindromeNumber.Test();
+			// 9. PalindromeNumber.Test();
+			// 10. 
+			// 11. 
+			ContainerWithMostWater.Test();
+
 
 			Console.WriteLine("*****");
 			Console.ReadLine();
