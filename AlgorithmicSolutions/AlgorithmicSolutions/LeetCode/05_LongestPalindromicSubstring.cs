@@ -19,6 +19,7 @@ Output: "bb"
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static AlgorithmicSolutions.ConsoleExtensions;
 
 namespace AlgorithmicSolutions.LeetCode
 {
@@ -35,25 +36,24 @@ namespace AlgorithmicSolutions.LeetCode
 		private static string GetResult(string s)
 		{
 			var result = string.Empty;
-			var len = s.Length;
-			var arr = new bool[len,len];
+			var arr = new bool[s.Length, s.Length];
 			var start = 0;
 			var end = 0;
 
-			for (int i = len - 1; i >= 0; i--)
+			for (int i = s.Length - 1; i >= 0; i--)
 			{
-				for (int j = i; j < len; j++)
+				for (int j = i; j < s.Length; j++)
 				{
 					if (j - i < 3)
 					{
-						arr[i,j] = (s[i] == s[j]); //base case 
+						arr[i, j] = (s[i] == s[j]); //base case 
 					}
 					else
 					{
-						arr[i,j] = (s[i] == s[j] && arr[i + 1, j - 1]);
+						arr[i, j] = (s[i] == s[j] && arr[i + 1, j - 1]); //next i from start and next j from end
 					}
 
-					if (arr[i,j] && (end - start <= j - i))
+					if (arr[i, j] && (end - start <= j - i))
 					{
 						start = i;
 						end = j;
@@ -61,7 +61,7 @@ namespace AlgorithmicSolutions.LeetCode
 				}
 			}
 
-			result = s.Substring(start, (end + 1 - start));
+			result = s.Substring(start, (end - start + 1));
 			return result;
 		}
 
@@ -141,6 +141,7 @@ namespace AlgorithmicSolutions.LeetCode
 			return lenLPS;
 		}
 
+
 		private static void TestCase1()
 		{
 			var input = "babad";
@@ -164,11 +165,7 @@ namespace AlgorithmicSolutions.LeetCode
 
 			var result = GetResult(input);
 
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.WriteLine(" RESULT:   " + result);
-			Console.WriteLine("_".PadLeft(20, '_'));
-			Console.WriteLine();
+			WriteResult(input, expect, result);
 		}
 
 		private static void TestCase3()
@@ -178,11 +175,7 @@ namespace AlgorithmicSolutions.LeetCode
 
 			var result = GetResult(input);
 
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.WriteLine(" RESULT:   " + result);
-			Console.WriteLine("_".PadLeft(20, '_'));
-			Console.WriteLine();
+			WriteResult(input, expect, result);
 		}
 
 		private static void TestCase4()
@@ -192,11 +185,7 @@ namespace AlgorithmicSolutions.LeetCode
 
 			var result = GetResult(input);
 
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.WriteLine(" RESULT:   " + result);
-			Console.WriteLine("_".PadLeft(20, '_'));
-			Console.WriteLine();
+			WriteResult(input, expect, result);
 		}
 	}
 }

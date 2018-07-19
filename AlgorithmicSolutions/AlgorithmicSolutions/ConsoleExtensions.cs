@@ -8,9 +8,9 @@ namespace AlgorithmicSolutions
 	{
 		public static void WriteResult(string input, string expect, string result)
 		{
-			Console.WriteLine(" INPUT:    " + input);
-			Console.WriteLine(" EXPECTED: " + expect);
-			Console.Write(" RESULT:   " + result);
+			Console.WriteLine(" INPUT:    " + CheckParam(input));
+			Console.WriteLine(" EXPECTED: " + CheckParam(expect));
+			Console.Write(" RESULT:   " + CheckParam(result));
 			var color = Console.ForegroundColor;
 
 			if (expect == result)
@@ -29,7 +29,25 @@ namespace AlgorithmicSolutions
 			Console.WriteLine();
 		}
 
-		public static void WriteResult(string input, int expect, int result)
+		private static string CheckParam(string val)
+		{
+			if (val == null)
+			{
+				val = "<null>";
+			}
+			else if (val == "")
+			{
+				val = "\"\"";
+			}
+
+			return val;
+		}
+
+		public static void WriteResult(string[] input, string expect, string result)
+		{
+			WriteResult(ArrayToString(input), expect, result);
+		}
+			public static void WriteResult(string input, int expect, int result)
 		{
 			WriteResult(input, expect.ToString(), result.ToString());
 		}
@@ -56,6 +74,16 @@ namespace AlgorithmicSolutions
 
 
 		private static string ArrayToString(int[] input)
+		{
+			var builder = new StringBuilder("[");
+
+			builder.Append(string.Join(",", input));
+			builder.Append("]");
+
+			return builder.ToString();
+		}
+
+		private static string ArrayToString(string[] input)
 		{
 			var builder = new StringBuilder("[");
 
