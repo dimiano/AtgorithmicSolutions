@@ -20,8 +20,9 @@ namespace AlgorithmicSolutions
 			// 9. PalindromeNumber.Test();
 			// 10. 
 			// 11. ContainerWithMostWater.Test();
-			// 12. 
-			IntegerToRoman.Test();
+			// 12. IntegerToRoman.Test();
+			// 13.
+			RomanToInteger.Test();
 
 
 			Console.WriteLine("*****");
