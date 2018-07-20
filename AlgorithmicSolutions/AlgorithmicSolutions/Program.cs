@@ -18,7 +18,8 @@ namespace AlgorithmicSolutions
 			// 7. ReverseInteger.Test();
 			// 8. StringToIntegerAtoi.Test();
 			// 9. PalindromeNumber.Test();
-			// 10. RegularExpressionMatching.Test();
+			// 10. 
+			RegularExpressionMatching.Test(); // DP
 			// 11. ContainerWithMostWater.Test();
 			// 12. IntegerToRoman.Test();
 			// 13. RomanToInteger.Test();
