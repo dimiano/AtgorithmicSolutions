@@ -6,9 +6,11 @@ namespace AlgorithmicSolutions
 {
 	public static class ConsoleExtensions
 	{
+		private static int _count = 1;
+
 		public static void WriteResult(string input, string expect, string result)
 		{
-			Console.WriteLine(" INPUT:    " + CheckParam(input));
+			Console.WriteLine($"{_count++:00}. INPUT: {CheckParam(input)}");
 			Console.WriteLine(" EXPECTED: " + CheckParam(expect));
 			Console.Write(" RESULT:   " + CheckParam(result));
 			var color = Console.ForegroundColor;
