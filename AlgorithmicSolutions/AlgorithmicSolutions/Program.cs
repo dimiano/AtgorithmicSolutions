@@ -23,8 +23,9 @@ namespace AlgorithmicSolutions
 			// 12. IntegerToRoman.Test();
 			// 13. RomanToInteger.Test();
 			// 14. LongestCommonPrefix.Test();
-			// 32.
-			LongestValidParentheses.Test();
+			// 32. LongestValidParentheses.Test(); // DP
+			// 44. 
+			WildcardMatching.Test(); // DP
 
 			Console.WriteLine("*".PadLeft(20, '*'));
 			Console.ReadLine();
