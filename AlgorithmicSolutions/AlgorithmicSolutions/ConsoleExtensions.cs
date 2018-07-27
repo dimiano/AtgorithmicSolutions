@@ -104,7 +104,6 @@ namespace AlgorithmicSolutions
 		{
 			var color = Console.ForegroundColor;
 
-			_successCount++;
 			Console.ForegroundColor = ConsoleColor.Green;
 			Console.Write(" CORRECT : " + _successCount);
 
