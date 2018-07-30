@@ -25,8 +25,9 @@ namespace AlgorithmicSolutions
 			// 14. LongestCommonPrefix.Test();
 			// 32. LongestValidParentheses.Test(); // DP
 			// 44. WildcardMatching.Test(); // DP
-			// 53. 
-			MaximumSubarray.Test();
+			// 53. MaximumSubarray.Test(); // DP
+			// 62. 
+			UniquePaths.Test();
 
 			Console.WriteLine("*".PadLeft(20, '*'));
 			Console.ReadLine();
