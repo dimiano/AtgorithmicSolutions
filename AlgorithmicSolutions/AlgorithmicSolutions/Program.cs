@@ -26,9 +26,10 @@ namespace AlgorithmicSolutions
 			// 32. LongestValidParentheses.Test(); // DP
 			// 44. WildcardMatching.Test(); // DP
 			// 53. MaximumSubarray.Test(); // DP
-			// 62. UniquePaths.Test(); DP
-			// 63. 
-			UniquePaths2.Test();
+			// 62. UniquePaths.Test(); // DP
+			// 63. UniquePaths2.Test(); // DP
+			// 64. 
+			MinimumPathSum.Test();
 
 			Console.WriteLine("*".PadLeft(20, '*'));
 			Console.ReadLine();
