@@ -28,10 +28,11 @@ namespace AlgorithmicSolutions
 			// 53. MaximumSubarray.Test(); // DP
 			// 62. UniquePaths.Test(); // DP
 			// 63. UniquePaths2.Test(); // DP
-			// 64. 
-			MinimumPathSum.Test();
+			// 64. MinimumPathSum.Test(); // DP
+			// 70.
+			ClimbingStairs.Test();
 
-			Console.WriteLine("*".PadLeft(20, '*'));
+			Console.WriteLine("*".PadLeft(25, '*'));
 			Console.ReadLine();
 		}
 	}
