@@ -29,8 +29,9 @@ namespace AlgorithmicSolutions
 			// 62. UniquePaths.Test(); // DP
 			// 63. UniquePaths2.Test(); // DP
 			// 64. MinimumPathSum.Test(); // DP
-			// 70.
-			ClimbingStairs.Test();
+			// 70. ClimbingStairs.Test(); // DP
+			// 72. 
+			EditDistance.Test(); // DP
 
 			Console.WriteLine("*".PadLeft(25, '*'));
 			Console.ReadLine();
