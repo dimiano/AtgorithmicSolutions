@@ -33,7 +33,7 @@ namespace AlgorithmicSolutions
 			}
 			Console.ForegroundColor = color;
 
-			Console.WriteLine("_".PadLeft(20, '_'));
+			Console.WriteLine("_".PadLeft(25, '_'));
 			Console.WriteLine();
 		}
 
@@ -59,7 +59,7 @@ namespace AlgorithmicSolutions
 			}
 			Console.ForegroundColor = color;
 
-			Console.WriteLine("_".PadLeft(20, '_'));
+			Console.WriteLine("_".PadLeft(25, '_'));
 			Console.WriteLine();
 		}
 
@@ -88,6 +88,11 @@ namespace AlgorithmicSolutions
 			WriteResult(ArrayToString(input), expect.ToString(), result.ToString());
 		}
 
+		public static void WriteResult(char[,] input, int expect, int result)
+		{
+			WriteResult(ArrayToString(input), expect.ToString(), result.ToString());
+		}
+
 		public static void WriteResult(object input, object expect, object result)
 		{
 			WriteResult(input.ToString(), expect.ToString(), result.ToString());
@@ -97,8 +102,6 @@ namespace AlgorithmicSolutions
 		{
 			WriteResult(input1.ToString(), input2.ToString(), expect.ToString(), result.ToString());
 		}
-
-		#endregion Write Result
 
 		public static void WriteResultStatistic()
 		{
@@ -118,6 +121,8 @@ namespace AlgorithmicSolutions
 			Console.WriteLine("_".PadLeft(20, '_'));
 			Console.WriteLine();
 		}
+
+		#endregion Write Result
 
 		private static string CheckParam(string val)
 		{
@@ -154,6 +159,36 @@ namespace AlgorithmicSolutions
 		}
 
 		private static string ArrayToString(int[,] input)
+		{
+			var builder = new StringBuilder("[");
+			var iMax = input.GetLength(0);
+			var jMax = input.GetLength(1);
+
+			for (int i = 0; i < iMax; i++)
+			{
+				if (i > 0)
+				{
+					builder.Append(",");
+				}
+
+				builder.Append('{');
+
+				for (int j = 0; j < jMax; j++)
+				{
+					if (j > 0)
+					{
+						builder.Append(',');
+					}
+					builder.Append(input[i, j]);
+				}
+				builder.Append('}');
+			}
+			builder.Append(']');
+
+			return builder.ToString();
+		}
+
+		private static string ArrayToString(char[,] input)
 		{
 			var builder = new StringBuilder("[");
 			var iMax = input.GetLength(0);
