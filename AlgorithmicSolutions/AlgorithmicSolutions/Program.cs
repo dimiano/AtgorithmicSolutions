@@ -31,8 +31,9 @@ namespace AlgorithmicSolutions
 			// 64. MinimumPathSum.Test(); // DP
 			// 70. ClimbingStairs.Test(); // DP
 			// 72. EditDistance.Test(); // DP
-			// 85. 
-			MaximalRectangle.Test(); // DP
+			// 84. 
+			LargestRectangleInHistogram.Test(); // DP
+			// 85. MaximalRectangle.Test(); // DP
 
 			Console.WriteLine("*".PadLeft(25, '*'));
 			Console.ReadLine();
