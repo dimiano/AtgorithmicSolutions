@@ -33,8 +33,9 @@ namespace AlgorithmicSolutions
 			// 72. EditDistance.Test(); // DP
 			// 84. LargestRectangleInHistogram.Test(); // DP
 			// 85. MaximalRectangle.Test(); // DP
-			// 87.
-			ScrambleString.Test(); // DP
+			// 87. ScrambleString.Test(); // DP
+			// 91. 
+			DecodeWays.Test(); // DP
 
 			Console.WriteLine("*".PadLeft(25, '*'));
 			Console.ReadLine();
