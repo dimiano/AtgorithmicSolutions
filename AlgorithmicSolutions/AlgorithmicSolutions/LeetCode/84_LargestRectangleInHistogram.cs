@@ -34,7 +34,7 @@ namespace AlgorithmicSolutions.LeetCode
 			WriteResultStatistic();
 		}
 
-		private static int GetResult(int[] heights)
+		public static int GetResult(int[] heights)
 		{
 			return GetResultDpUp(heights);
 		}

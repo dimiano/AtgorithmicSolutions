@@ -39,6 +39,7 @@ namespace AlgorithmicSolutions.LeetCode
 		private static int GetResult(char[,] matrix)
 		{
 			return GetResultDpUp(matrix);
+			return GetResultDpUp1(matrix);
 		}
 
 		// Bottom-Up
@@ -57,59 +58,71 @@ namespace AlgorithmicSolutions.LeetCode
 					row[j] = (arr[i, j] == '1') ? row[j] + 1 : 0;
 				}
 
-				max = GetMaxArea(row);
+				max = LargestRectangleInHistogram.GetResult(row);
 				maxArea = Math.Max(maxArea, max);
 			}
 
 			return maxArea;
 		}
 
-		private static int GetMaxArea(int[] arr)
+		// Bottom-Up
+		private static int GetResultDpUp1(char[,] arr)
 		{
-			var stack = new Stack<int>();
+			var rows = arr.GetLength(0);
+			var cols = arr.GetLength(1);
 			var max = 0;
-			var i = 0;
+			var maxArea = 0;
+			var endA = 0;
+			var endB = 0;
+			var dp = new int[rows, cols];
 
-			for (i = 0; i < arr.Length;)
+			for (int i = 0; i < rows; i++)
 			{
-				if (stack.Count == 0 || arr[stack.Peek()] <= arr[i])
-				{
-					stack.Push(i++);
-				}
-				else
-				{
-					var area = 0;
-					var top = stack.Pop();
-
-					if (stack.Count == 0)
-					{
-						area = arr[top] * i;
-					}
-					else
-					{
-						area = arr[top] * (i - stack.Peek() - 1);
-					}
-					max = Math.Max(area, max);
-				}
+				dp[i, 0] = arr[i, 0] == '1' ? 1 : 0;
 			}
 
-			while (stack.Count != 0)
+			for (int i = 0; i < cols; i++)
 			{
-				var area = 0;
-				var top = stack.Pop();
-
-				if (stack.Count == 0)
-				{
-					area = arr[top] * i;
-				}
-				else
-				{
-					area = arr[top] * (i - stack.Peek() - 1);
-				}
-				max = Math.Max(area, max);
+				dp[0, i] = arr[0, i] == '1' ? 1 : 0;
 			}
 
-			return max;
+			for (int i = 1; i < rows; i++)
+			{
+				for (int j = 1; j < cols; j++)
+				{
+					if (arr[i, j] != '0')
+					{
+						var min = Math.Min(dp[i, j - 1], dp[i - 1, j]);
+						var curr = Math.Min(dp[i - 1, j - 1], min) + 1;
+						dp[i, j] = curr;
+
+						if (curr >= max)
+						{
+							max = curr;
+							endA = i;
+							endB = j;
+						}
+					}
+				}
+			}
+			var a = 0;
+			for (a = endA - 1; a >= 0; a--)
+			{
+				if (dp[a, endB] < dp[a + 1, endB])
+				{
+					break;
+				}
+			}
+			var b = 0;
+			for (b = endB - 1; b >= 0; b--)
+			{
+				if (dp[endA, b] < dp[endA, b + 1])
+				{
+					break;
+				}
+			}
+			maxArea = (endB - b + 1) * (endA - a + 1);
+			return maxArea;
 		}
 
 
@@ -128,4 +141,3 @@ namespace AlgorithmicSolutions.LeetCode
 		}
 	}
 }
-
